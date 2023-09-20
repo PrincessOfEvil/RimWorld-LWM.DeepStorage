@@ -1,0 +1,21 @@
+<Patch>
+  <!-- Compatibility for Reich Armory - Add custom Weapon category-->
+  <!--   Request by skycrossercat -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Reich Armory [1.0]</li>
+      <li>Reich Armory [1.2]</li>
+      <li>Reich Armory [1.1]</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName="LWM_WeaponsCabinet" or defName="LWM_WeaponsLocker"]/building/fixedStorageSettings/filter/categories</xpath>
+          <value>
+            <li>Reich_Armory_Cat</li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

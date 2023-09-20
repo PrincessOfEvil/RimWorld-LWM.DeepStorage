@@ -1,0 +1,19 @@
+<Patch>
+  <!-- Compatibility for ToolsFramework. Allows tools to be stored in weapon lockers. -->
+  <!--=====[LC] ToolsFramework=====-->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>[LC]Tools Framework</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName="LWM_WeaponsCabinet" or defName="LWM_WeaponsLocker"]/building/fixedStorageSettings/filter/categories</xpath>
+          <value>
+            <li>Tools</li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

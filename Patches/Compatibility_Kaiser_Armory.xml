@@ -1,0 +1,21 @@
+<Patch>
+  <!-- Compatibility for Kaiser Armory - Add custom Weapon category-->
+  <!--   Request by skycrossercat -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Kaiser Armory [1.0]</li>
+      <li>Kaiser Armory [1.1]</li>
+      <li>Kaiser Armory [1.2]</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName="LWM_WeaponsCabinet" or defName="LWM_WeaponsLocker"]/building/fixedStorageSettings/filter/categories</xpath>
+          <value>
+            <li>Kaiser_Armory_Cat</li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>
