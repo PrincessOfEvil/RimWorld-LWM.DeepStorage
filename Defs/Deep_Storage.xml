@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <ThingDef Name="LWM_MealRack" ParentName="ShelfBase" >
+  <ThingDef Name="LWM_ShelfBase" ParentName="ShelfBase" Abstract="True">
+    <size>(2,1)</size>
+    <designationCategory>LWM_DS_Storage</designationCategory><!--architect menu location-->
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints> 
+      <Mass>8</Mass>
+      <WorkToBuild>500</WorkToBuild>
+    </statBases>
+  </ThingDef>
+
+
+  <ThingDef Name="LWM_MealRack" ParentName="LWM_ShelfBase" >
     <defName>LWM_MealRack</defName>
     <label>Meal Tray Rack</label>
     <description>This is a tall tray rack; haulers carry meals and treats here for storage.</description>
@@ -17,11 +28,11 @@
       <Beauty>0.7</Beauty>
       <Mass>20</Mass>
     </statBases>
-    <stuffCategories>
+    <stuffCategories Inherit="False">
       <li>Metallic</li>
       <li>Woody</li>
     </stuffCategories>
-    <costStuffCount>75</costStuffCount><!-- lots of shelves? -->
+    <costStuffCount>24</costStuffCount><!-- food is lighter than stuff you'd put on a shelf -->
     <building>
       <maxItemsInCell>5</maxItemsInCell>
 
@@ -38,7 +49,7 @@
     </building>
   </ThingDef>
 
-  <ThingDef Name="LWM_Food_Basket" ParentName="ShelfBase">
+  <ThingDef Name="LWM_Food_Basket" ParentName="LWM_ShelfBase">
     <defName>LWM_Food_Basket</defName>
     <label>Food Basket</label>
     <description>A mini-granary for storing raw food and plant matter.</description>
@@ -52,12 +63,13 @@
         <offset>(.1,0,0)</offset>
       </shadowData>
     </graphicData>
-    <stuffCategories>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+    <stuffCategories Inherit="False">
       <li>Metallic</li>
       <li>Woody</li>
       <li>Stony</li>
     </stuffCategories>
-    <costStuffCount>80</costStuffCount><!--Okay, these are big, if they are holding all that food!-->
+    <costStuffCount>30</costStuffCount><!--Okay, these are big, if they are holding all that food!-->
     <statBases>
       <MaxHitPoints>50</MaxHitPoints>
       <Mass>8</Mass>
@@ -83,7 +95,7 @@
     </building>
   </ThingDef>
 
-  <ThingDef Name="LWM_MeatHook" ParentName="ShelfBase"><!--LWM creation-->
+  <ThingDef Name="LWM_MeatHook" ParentName="LWM_ShelfBase"><!--LWM creation-->
     <defName>LWM_Meat_Hook</defName>
     <label>Meat Hook</label>
     <description>A tall metal frame with several hooks hanging from chains.  A simple crank allows hoisting several hanging things into the air.  A way to store the dead bodies of fellow animals you have killed, before cutting them up and consuming their flesh.  You monster.
@@ -98,6 +110,7 @@ Note that you can only fit so many giant corpses into one space, even if you sta
       </shadowData>
       <drawRotated>false</drawRotated>
     </graphicData>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
     <drawGUIOverlay>false</drawGUIOverlay>
     <castEdgeShadows>true</castEdgeShadows><!-- Useful effect? -->
     <size>(1,1)</size>
@@ -109,10 +122,10 @@ Note that you can only fit so many giant corpses into one space, even if you sta
       <Beauty>-2</Beauty><!--Creeeepy-->
       <Mass>10</Mass>
     </statBases>
-    <stuffCategories>
+    <stuffCategories Inherit="False">
       <li>Metallic</li>
     </stuffCategories>
-    <costStuffCount>75</costStuffCount>
+    <costStuffCount>30</costStuffCount>
     <building>
       <maxItemsInCell>3</maxItemsInCell>
 
@@ -144,7 +157,7 @@ Note that you can only fit so many giant corpses into one space, even if you sta
     </researchPrerequisites>
   </ThingDef>
 
-  <ThingDef Name="LWM_HayLoft" ParentName="ShelfBase"><!--LWM Creation-->
+  <ThingDef Name="LWM_HayLoft" ParentName="LWM_ShelfBase"><!--LWM Creation-->
     <defName>LWM_Hayloft</defName>
     <label>Hayloft</label>
     <description>"A hayloft is a space above a barn, stable or cow-shed, traditionally used for storage of hay or other fodder for the animals below. Haylofts were used mainly before the widespread use of industrial sized farm machinery allowed creating very large haybales that cannot be easily lifted for storing..."  --Encyclopedia Galactica\n\nLet's be honest here.  Unless you're using some farming mods I don't know about, your colonists are probably making piles of hay by hand, which is slow, backbreaking labor.  You know what?  Most farming is slow, backbreaking labor, and your colonists can't even hire migrant workers from other colonies.  Treat farmers and farm workers with respect: they work a lot harder than YOU do ;) Amazing people, good food.\n\nThis structure can be used to store hay, silage, and various other plant materials off of damp floors.  You probably want to build it under a (very tall) roof.</description>
@@ -162,11 +175,11 @@ Note that you can only fit so many giant corpses into one space, even if you sta
       <Mass>40</Mass>
     </statBases>
     <pathCost>100</pathCost><!--structure off the ground, just have to get around posts?-->
-    <stuffCategories>
+    <stuffCategories Inherit="False">
       <li>Woody</li>
       <li>Metallic</li><!-- solid gold haylofts?  If you can afford this, you can afford to pretend you used some steel ;p -->
     </stuffCategories>
-    <costStuffCount>85</costStuffCount>
+    <costStuffCount>24</costStuffCount>
     <building>
       <maxItemsInCell>5</maxItemsInCell>
       <preventDeteriorationOnTop>false</preventDeteriorationOnTop>
@@ -190,7 +203,7 @@ Note that you can only fit so many giant corpses into one space, even if you sta
     </building>
   </ThingDef>
 
-  <ThingDef Name="LWM_FabricHamper" ParentName="ShelfBase">
+  <ThingDef Name="LWM_FabricHamper" ParentName="LWM_ShelfBase">
     <defName>LWM_FabricHamper</defName>
     <label>Hampers</label>
     <description>This is a set of hampers made out of fabric.  The various pockets allow storing large amounts of diverse small items with ease.\n\nIf you really want to store fabric in bags, see the mod settings!</description>
@@ -207,12 +220,12 @@ Note that you can only fit so many giant corpses into one space, even if you sta
       <Beauty>0</Beauty>
       <Mass>12</Mass>
     </statBases>
-    <stuffCategories>
+    <stuffCategories Inherit="False">
       <li>Fabric</li>
       <li>Leathery</li>
     </stuffCategories>
-    <costStuffCount>90</costStuffCount>
-    <costList><Steel>25</Steel></costList><!--Wish I could do steel OR wood-->
+    <costStuffCount>20</costStuffCount>
+    <costList><Steel>5</Steel></costList><!--Wish I could do steel OR wood-->
     <building>
       <maxItemsInCell>4</maxItemsInCell>
       <fixedStorageSettings Inherit="False">
@@ -247,7 +260,7 @@ Note that you can only fit so many giant corpses into one space, even if you sta
     </building>
   </ThingDef>
 
-  <ThingDef Name="LWM_Pallet" ParentName="ShelfBase" >
+  <ThingDef Name="LWM_Pallet" ParentName="LWM_ShelfBase" >
     <defName>LWM_Pallet</defName>
     <label>Pallet</label>
     <description>A flat pallet for packing things.  Does not protect against the weather.  Sometimes difficult to manage, but useful nonetheless.</description>
@@ -265,11 +278,11 @@ Note that you can only fit so many giant corpses into one space, even if you sta
       <Beauty>-2</Beauty><!-- just a lump of ugly boards -->
       <Mass>10</Mass>
     </statBases>
-    <stuffCategories>
+    <stuffCategories Inherit="False">
       <li>Woody</li>
       <li>Metallic</li>
     </stuffCategories>
-    <costStuffCount>65</costStuffCount>
+    <costStuffCount>30</costStuffCount>
     <building>
       <maxItemsInCell>4</maxItemsInCell>
 
@@ -302,13 +315,13 @@ Note that you can only fit so many giant corpses into one space, even if you sta
       <Beauty>1</Beauty><!-- looks tidier than just a flat pallat piled with stuff -->
       <Mass>11</Mass>
     </statBases>
-    <stuffCategories>
+    <stuffCategories Inherit="False">
       <li>Woody</li>
       <li>Metallic</li>
     </stuffCategories>
-    <costStuffCount>65</costStuffCount>
+    <costStuffCount>30</costStuffCount>
     <costList>
-      <Cloth>40</Cloth>
+      <Cloth>15</Cloth>
     </costList>
     <building>
       <maxItemsInCell>5</maxItemsInCell>
@@ -332,8 +345,8 @@ Note that you can only fit so many giant corpses into one space, even if you sta
     </building>
   </ThingDef>
 
-  <ThingDef Name="LWM_Skip"  ParentName="ShelfBase" ><!--Note: Name does NOT match defName: oops-->
-    <defName>ShelfBase_Skip</defName>
+  <ThingDef Name="LWM_Skip"  ParentName="LWM_ShelfBase" ><!--Note: Name does NOT match defName: oops-->
+    <defName>LWM_ShelfBase_Skip</defName>
     <label>Skip</label>
     <description>A large metal bin for tossing heavy things in.  These skips are not covered; they are open to the weather.
 
@@ -351,10 +364,10 @@ Note: tossing large amounts of steel in willy-nilly means that it takes a while 
       <Beauty>-5</Beauty><!-- Let's be honest, this is probably low: ugly beat up dumpster -->
       <Mass>5</Mass><!-- If you are dragging it around, let's pretend you fashion wheels for it, eh? -->
     </statBases>
-    <stuffCategories>
+    <stuffCategories Inherit="False">
       <li>Metallic</li>
     </stuffCategories>
-    <costStuffCount>90</costStuffCount>
+    <costStuffCount>36</costStuffCount>
     <building>
       <maxItemsInCell>5</maxItemsInCell>
 
@@ -374,12 +387,15 @@ Note: tossing large amounts of steel in willy-nilly means that it takes a while 
           <disallowedCategories>
             <li>PlantMatter</li>
           </disallowedCategories>
+          <disallowedThingDefs>
+            <li>WoodLog</li>
+          </disallowedThingDefs>
         </filter>
       </fixedStorageSettings>
     </building>
   </ThingDef>
 
-  <ThingDef Name="LWM_Medicine_Cabinet" ParentName="ShelfBase">
+  <ThingDef Name="LWM_Medicine_Cabinet" ParentName="LWM_ShelfBase">
     <defName>LWM_Medicine_Cabinet</defName>
     <label>Medicine Cabinet</label>
     <description>A set of cabinets and shelves for stocking medicines and drugs.  Recommended: keep an eye on children.</description>
@@ -393,11 +409,12 @@ Note: tossing large amounts of steel in willy-nilly means that it takes a while 
         <offset>(.1,0,0)</offset>
       </shadowData>
     </graphicData>
-    <stuffCategories>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+    <stuffCategories Inherit="False">
       <li>Metallic</li>
       <li>Woody</li>
     </stuffCategories>
-    <costStuffCount>60</costStuffCount>
+    <costStuffCount>24</costStuffCount>
     <statBases>
       <Beauty>1</Beauty>
       <MaxHitPoints>25</MaxHitPoints>
@@ -422,7 +439,7 @@ Note: tossing large amounts of steel in willy-nilly means that it takes a while 
     </building>
   </ThingDef>
 
-  <ThingDef Name="LWM_Clothing_Rack" ParentName="ShelfBase">
+  <ThingDef Name="LWM_Clothing_Rack" ParentName="LWM_ShelfBase">
     <defName>LWM_Clothing_Rack</defName>
     <label>Clothing Rack</label>
     <description>A covered rack for storing clothing for easy, quick access and a tidy room.</description>
@@ -439,11 +456,11 @@ Note: tossing large amounts of steel in willy-nilly means that it takes a while 
       <Beauty>1.5</Beauty><!-- If I ever change texture to armoir, I'm bumping this up to 3 -->
       <Mass>10</Mass>
     </statBases>
-    <stuffCategories>
+    <stuffCategories Inherit="False">
       <li>Metallic</li>
       <li>Woody</li>
     </stuffCategories>
-    <costStuffCount>50</costStuffCount>
+    <costStuffCount>30</costStuffCount>
     <building>
       <maxItemsInCell>8</maxItemsInCell>
       <fixedStorageSettings Inherit="False">
@@ -459,7 +476,7 @@ Note: tossing large amounts of steel in willy-nilly means that it takes a while 
     </building>
   </ThingDef>
   
-  <ThingDef ParentName="ShelfBase">
+  <ThingDef ParentName="LWM_ShelfBase">
 	<defName>LWM_Safe</defName>
 	<label>Safe</label>
 	<description>A secure, lockable box for safely storing valuables against theft and/or damage from fire.\n\nNote: protection from fire not yet implemented)</description>
@@ -480,10 +497,10 @@ Note: tossing large amounts of steel in willy-nilly means that it takes a while 
 		<Beauty>-1.5</Beauty> <!-- Dull, heavy metal box -->
 		<Mass>500</Mass> <!-- Solid cast-iron (or whatever) construction -->
 	</statBases>
-	<stuffCategories>
+	<stuffCategories Inherit="False">
 		<li>Metallic</li>
 	</stuffCategories>
-	<costStuffCount>300</costStuffCount>
+	<costStuffCount>150</costStuffCount>
 	<building>
       <maxItemsInCell>8</maxItemsInCell>
 		<preventDeteriorationOnTop>true</preventDeteriorationOnTop>

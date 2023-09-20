@@ -2,7 +2,7 @@
 <Defs> <!-- Thanks to sumghai for help with this; icons are his -->
   <!-- Wooden Weapons Cabinet for tribal, medieval and pre-industrial playthroughs -->
   <!--       also available for lazy colonists -->
-  <ThingDef Name="LWM_WeaponsCabinet" ParentName="ShelfBase" >
+  <ThingDef Name="LWM_WeaponsCabinet" ParentName="LWM_ShelfBase" >
     <defName>LWM_WeaponsCabinet</defName>
     <label>Weapons Cabinet</label>
     <description>A sturdy cabinet for storing multiple weapons. Items stored in this will not deteriorate, even if outside.</description>
@@ -23,11 +23,11 @@
       <Flammability>1.0</Flammability>
       <Mass>8</Mass>
     </statBases>
-    <stuffCategories>
+    <stuffCategories Inherit="False">
       <li>Woody</li>
       <li>Metallic</li><!-- You build it from what you can? -->
     </stuffCategories>
-    <costStuffCount>75</costStuffCount><!--Dresser costs 60 to build, and this has weirder requirements-->
+    <costStuffCount>36</costStuffCount><!--Dresser costs 60 to build, and this has weirder requirements-->
     <building>
       <maxItemsInCell>8</maxItemsInCell>
       <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
@@ -55,7 +55,7 @@
 
   <!-- Metallic Weapons Locker for industrial, modern and spacer playthroughs -->
   <!--   or for anyone who builds some good careful metal-working tools -->	
-  <ThingDef Name="LWM_WeaponsLocker" ParentName="ShelfBase" ><!--TODO: make this non-quality based?-->
+  <ThingDef Name="LWM_WeaponsLocker" ParentName="LWM_ShelfBase" ><!--TODO: make this non-quality based?-->
     <defName>LWM_WeaponsLocker</defName>
     <label>Weapons Locker</label>
     <description>A high-capacity metal locker for securely storing many weapons. Items stored in this will not deteriorate, even if outside.</description>
@@ -76,10 +76,10 @@
       <Flammability>0.1</Flammability>
       <Mass>8</Mass>
     </statBases>
-    <stuffCategories>
+    <stuffCategories Inherit="False">
       <li>Metallic</li>
     </stuffCategories>
-    <costStuffCount>70</costStuffCount><!-- This sheets cost less than bulk metal? -->
+    <costStuffCount>30</costStuffCount><!-- This sheets cost less than bulk metal? -->
     <building>
       <maxItemsInCell>8</maxItemsInCell>
       <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
