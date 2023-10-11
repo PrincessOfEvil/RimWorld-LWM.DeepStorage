@@ -136,9 +136,6 @@ Note that you can only fit so many giant corpses into one space, even if you sta
           <categories>
             <li>Corpses</li>
           </categories>
-          <disallowedCategories>
-            <li>CorpsesMechanoid</li>
-          </disallowedCategories>
         </filter>
       </fixedStorageSettings>
       <defaultStorageSettings>
